@@ -1,0 +1,27 @@
+{
+  "name": "paperback-soimaspider",
+  "version": "1.0.0",
+  "private": true,
+  "repositoryName": "Mo's Paperback Sources",
+  "description": "SoImASpider source for Paperback 0.8",
+  "author": "MrCooper846",
+  "license": "MIT",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "test": "tsc && node --test test/*.test.cjs",
+    "bundle": "paperback bundle --folder 0.8",
+    "serve": "paperback serve",
+    "smoke": "tsc && node scripts/smoke.cjs",
+    "prebundle": "node -e \"require('fs').mkdirSync('bundles', { recursive: true })\""
+  },
+  "dependencies": {
+    "@paperback/types": "0.8.7",
+    "cheerio": "1.0.0-rc.12"
+  },
+  "devDependencies": {
+    "@paperback/toolchain": "0.8.7",
+    "@types/node": "18.19.0",
+    "typescript": "4.9.5"
+  },
+  "baseURL": "https://mrcooper846.github.io/paperback-soimaspider/0.8"
+}
