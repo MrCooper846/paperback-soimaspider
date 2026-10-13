@@ -1,7 +1,7 @@
-# SoImASpider for Paperback 0.8
+# Mo's Paperback Sources for Paperback 0.8
 
-A single-series Paperback source for [soimaspider.com](https://soimaspider.com/).
-It provides search, the series cover and description, chapter discovery, and ordered
+Paperback sources for [SoImASpider](https://soimaspider.com/) and [One Punch Man](https://onepunchmanofficial.com/).
+Each source provides search, the series cover and description, chapter discovery, and ordered
 page-image URLs. The repository contains extension code, not manga image files.
 
 ## Install
@@ -10,7 +10,7 @@ Once GitHub Pages has been enabled and the deployment has succeeded:
 
 1. Open https://mrcooper846.github.io/paperback-soimaspider/0.8/ in Safari on your iPhone/iPad.
 2. Tap **Add to Paperback** on the generated repository page.
-3. In Paperback's external source settings, install **SoImASpider** from **Mo's Paperback Sources**.
+3. In Paperback's external source settings, install **SoImASpider** or **OnePunchMan** from **Mo's Paperback Sources**.
 4. Open the source and add the series to your library.
 
 You can also add the repository URL manually in Paperback:
@@ -41,7 +41,7 @@ npm run bundle
 npm run smoke
 ```
 
-`npm run smoke` also needs `curl` and reads the homepage plus two chapters from
+`npm run smoke` also needs `curl` and reads each homepage plus two chapters from
 the live website. It runs the actual generated bundle in an isolated JavaScript
 context without Node/browser globals. The deterministic parser tests run in CI;
 the live smoke test is manual so website outages do not break deployments.
@@ -74,3 +74,9 @@ files are generated under `bundles/0.8/`; GitHub Actions deploys the `bundles` d
 
 `src/SoImASpider/Parser.ts` holds website selectors and URL parsing.
 `src/SoImASpider/SoImASpider.ts` adapts those results to Paperback's API.
+
+## OnePunchMan (added 13 October 2026)
+
+Refresh the existing repository in Paperback and install **OnePunchMan**. No new repository URL is needed. This source parses the homepage chapter list, preserves decimal chapter paths such as `/chapter/24-5/`, and reads numbered chapter images in document order while excluding thumbnails. It uses the site cover and metadata description.
+
+`src/OnePunchMan/Parser.ts` holds its selectors; `scripts/smoke-onepunchman.cjs` checks the actual generated bundle without Node/browser globals. On-device reading and downloads remain untested.

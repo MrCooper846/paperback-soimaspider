@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "repositoryName": "Mo's Paperback Sources",
-  "description": "SoImASpider source for Paperback 0.8",
+  "description": "SoImASpider and OnePunchMan sources for Paperback 0.8",
   "author": "MrCooper846",
   "license": "MIT",
   "scripts": {
@@ -11,7 +11,7 @@
     "test": "tsc && node --test test/*.test.cjs",
     "bundle": "paperback bundle --folder 0.8",
     "serve": "paperback serve",
-    "smoke": "tsc && node scripts/smoke.cjs",
+    "smoke": "tsc && node scripts/smoke.cjs && node scripts/smoke-onepunchman.cjs",
     "prebundle": "node -e \"require('fs').mkdirSync('bundles', { recursive: true })\""
   },
   "dependencies": {
