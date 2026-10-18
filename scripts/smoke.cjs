@@ -51,7 +51,7 @@ vm.runInContext(fs.readFileSync('bundles/0.8/SoImASpider/source.js', 'utf8'), co
   assert.match(latestPages.pages[0], /\/01\.jpg$/);
   assert(latestPages.pages.every(url => /^https:\/\//.test(url)));
   const manifest = JSON.parse(fs.readFileSync('bundles/0.8/versioning.json'));
-  assert.equal(manifest.sources.length, 2);
+  assert.equal(manifest.sources.length, 3);
   assert(manifest.sources.find(s => s.id === 'SoImASpider'));
   assert.equal(manifest.builtWith.types, '0.8.7');
   console.log(JSON.stringify({ chapters: chapters.length, recentChapterPages: latestPages.pages.length,

@@ -1,6 +1,6 @@
 # Mo's Paperback Sources for Paperback 0.8
 
-Paperback sources for [SoImASpider](https://soimaspider.com/) and [One Punch Man](https://onepunchmanofficial.com/).
+Paperback sources for [SoImASpider](https://soimaspider.com/) , [One Punch Man](https://onepunchmanofficial.com/) and [Vinland Saga](https://vinlandsaga.website/).
 Each source provides search, the series cover and description, chapter discovery, and ordered
 page-image URLs. The repository contains extension code, not manga image files.
 
@@ -10,7 +10,7 @@ Once GitHub Pages has been enabled and the deployment has succeeded:
 
 1. Open https://mrcooper846.github.io/paperback-soimaspider/0.8/ in Safari on your iPhone/iPad.
 2. Tap **Add to Paperback** on the generated repository page.
-3. In Paperback's external source settings, install **SoImASpider** or **OnePunchMan** from **Mo's Paperback Sources**.
+3. In Paperback's external source settings, install **SoImASpider**, **OnePunchMan** or **VinlandSaga** from **Mo's Paperback Sources**.
 4. Open the source and add the series to your library.
 
 You can also add the repository URL manually in Paperback:
@@ -80,3 +80,9 @@ files are generated under `bundles/0.8/`; GitHub Actions deploys the `bundles` d
 Refresh the existing repository in Paperback and install **OnePunchMan**. No new repository URL is needed. This source parses the homepage chapter list, preserves decimal chapter paths such as `/chapter/24-5/`, and reads numbered chapter images in document order while excluding thumbnails. It uses the site cover and metadata description.
 
 `src/OnePunchMan/Parser.ts` holds its selectors; `scripts/smoke-onepunchman.cjs` checks the actual generated bundle without Node/browser globals. On-device reading and downloads remain untested.
+
+## VinlandSaga (added 18 October 2026)
+
+Refresh the existing repository in Paperback and install **VinlandSaga**. The installation URL is unchanged. The source reads the homepage chapter list and series cover, preserves chapter paths, and extracts ordered chapter images while excluding ads and duplicate images. `scripts/smoke-vinlandsaga.cjs` exercises chapters 220 and 1 using the generated bundle without Node/browser globals. On-device reading remains untested for this source.
+
+SoImASpider and OnePunchMan have been confirmed working on-device by the repository owner.
